@@ -1,16 +1,26 @@
-//
-//  ContentView.swift
-//  hirokiKadai4
-//
-//  Created by 河村宇記 on 2021/12/25.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    @State var count = 0
+    
     var body: some View {
-        Text("Hello, world!")
+        VStack {
+            Text("\(count)")
+            
+            Button(action: {
+                count += 1
+            }) {
+                Text("+1")
+            }
             .padding()
+            
+            Button(action: {
+                count = 0
+            }) {
+                Text("Clear")
+            }
+        }
+        
     }
 }
 
